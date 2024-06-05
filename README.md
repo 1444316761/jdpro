@@ -9,7 +9,7 @@
 国内机（带代理）：
 
 ```
-ql repo https://js.jdpro.site/https://github.com/6dylan6/jdpro.git "jd_|jx_|jddj_" "backUp" "^jd[^_]|USER|JD|function|sendNotify"
+ql repo https://js.jdpro.site/https://github.com/6dylan6/jdpro.git "jd_|jx_|jddj_" "backUp" "^jd[^_]|USER|JD|function|sendNotify|utils"
 
 ```
 默认代理拉不了，自行找可用代理
@@ -17,7 +17,7 @@ ql repo https://js.jdpro.site/https://github.com/6dylan6/jdpro.git "jd_|jx_|jddj
 国外机：
 
 ```
-ql repo https://github.com/6dylan6/jdpro.git "jd_|jx_|jddj_" "backUp" "^jd[^_]|USER|JD|function|sendNotify"
+ql repo https://github.com/6dylan6/jdpro.git "jd_|jx_|jddj_" "backUp" "^jd[^_]|USER|JD|function|sendNotify|utils"
 
 ```
 
@@ -42,11 +42,11 @@ RepoFileExtensions="js py"修改为 RepoFileExtensions="js py sh" 保存；
 
 4、订阅运行完毕，到定时任务搜索依赖安装任务执行；
 
-4、到环境变量，创建变量，名称: JD_COOKIE,值：抓的CK，多个依次创建；
+4、到环境变量，创建变量，名称: JD_COOKIE,值：抓的CK（要安全就手抓），多个依次创建；
 
 5、配置通知，通知的key填写到配置管理config.sh文件；
 
-6、sendnotify.js文件请拷贝库里的到青龙deps目录下，否则会贝尔自带覆盖
+6、sendnotify.js文件用库里的到青龙deps目录下，否则会被青龙自带覆盖
 
 <details>
 <summary>笔记</summary>
@@ -106,11 +106,13 @@ Recombin_CK_Mode="3" Recombin_CK_ARG1="5" Recombin_CK_ARG2="5"  假设有100个C
 
 自定义sign  export SIGN_URL='url'
 
-代理API export DY_PROXY='url'（部分js支持，看日志说明）
+代理API export DY_PROXY='url'（部分js支持）
+
+API白名单模式 export PERMIT_API='fruit'
 
 代理池 export DP_POOL='url'（全部js支持）
 
-使用代理池白名单（js文件名关键字如fruit），如fruit export PERMIT_JS='fruit'
+代理池白名单（js文件名关键字如fruit），如fruit export PERMIT_JS='fruit'
 
 
 ## 支持的通知方式
